@@ -1,0 +1,33 @@
+tei-div {
+  display: block;
+}
+tei-p, tei-u, tei-seg {
+  display: block;
+  margin-top: .5em;
+  margin-bottom: .5em;
+}
+tei-u > tei-note {
+  margin-right: 1em;
+  color: blue;
+}
+.highlight {
+  background-color: yellow;
+  padding: 0.2em;
+  border-radius: 4px;
+  transition: background-color 1s ease;
+}
+#fixedHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+  z-index: 1000;
+  padding: 0.5em 1em;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+body {
+  padding-top: 3em; /* 固定ヘッダーの分 */
+}

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meeting Viewer</title>
+  <link rel="stylesheet" href="./assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <h1>議事録起点ビューア</h1>
+      <p>要求を議事録ベースで追いながら、素案・案・答申案を参照</p>
+    </div>
+    <div class="controls">
+      <label for="query">検索</label>
+      <input id="query" type="search" placeholder="要求要約・話者・発言IDで検索">
+    </div>
+  </header>
+  <main class="workspace">
+    <aside id="sidebar" class="sidebar"></aside>
+    <section id="detail" class="detail"></section>
+  </main>
+  <script type="module" src="./assets/meeting-viewer.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+[
+    {
+      "id": "u5seg91",
+      "highlightText": "",
+      "linkedDraft": { "file": "env6plan_initial_draft.html", "target": "p56l16" },
+      "linkedProposal": { "file": "env6plan_draft.html", "target": "p65l10" },
+      "extraProposal": { "file": "env6plan_draft.html", "target": "p126l27" },
+      "adoption": 3
+    },
+    {
+      "id": "u5seg92",
+      "highlightText": "",
+      "linkedDraft": { "file": "env6plan_initial_draft.html", "target": "p41l5-p41l6" },
+      "linkedProposal": { "file": "env6plan_draft.html", "target": "p44l10-p44l11" },
+      "adoption": 1
+    },
+    {
+      "id": "u17seg136",
+      "highlightText": "",
+      "linkedDraft": { "file": "env6plan_initial_draft.html", "target": "p55l7" },
+      "linkedProposal": { "file": "env6plan_draft.html", "target": "p89l15" },
+      "adoption": 2
+    }
+  ]
+  

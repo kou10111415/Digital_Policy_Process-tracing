@@ -1,0 +1,95 @@
+tei-div {
+  display: block;
+}
+tei-p, tei-u, tei-seg {
+  display: block;
+  margin-top: .5em;
+  margin-bottom: .5em;
+}
+
+tei-u > tei-note {
+  margin-right: 1em;
+  color: blue;
+}
+
+tei-listperson {
+  display: block;
+  margin: 2em 0;
+  border-top: 2px solid #888;
+  padding-top: 1em;
+}
+
+tei-head {
+  display: block;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 1em;
+  color: #2c3e50;
+}
+
+tei-standoff tei-person {
+  display: block;
+  border-left: 3px solid #ccc;
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  background: #f9f9f9;
+}
+
+tei-standoff tei-persname {
+  display: block;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 0.3em;
+}
+
+tei-standoff tei-rolename {
+  margin-right: 1em;
+}
+
+tei-u tei-persname {
+  display: inline;
+  font-weight: normal;
+  font-size: 1em;
+}
+
+tei-surname,
+tei-forename {
+  display: inline;
+}
+
+tei-affiliation,
+tei-occupation {
+  display: block;
+  margin-left: 1em;
+  margin-top: 0.3em;
+  font-size: 0.95em;
+  color: #555;
+}
+
+tei-objectname,
+tei-placename {
+  display: inline;
+  margin-right: 0.5em;
+}
+
+#div1{
+  font-size: x-large;
+  font-weight: bold;
+}
+
+#div2, #div3, #div5{
+  background-color: #eee;
+  padding: 0.5em;
+}
+
+tei-relation, #div6{
+  display: none; /* 関係情報は別画面表示用かスクリプト対象の場合非表示 */
+}
+
+/* スマホ対応 */
+@media (max-width: 600px) {
+  tei-person {
+    padding: 0.5em;
+    font-size: 0.9em;
+  }
+}

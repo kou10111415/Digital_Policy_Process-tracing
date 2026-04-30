@@ -1,0 +1,6 @@
+beautifulsoup4
+chromadb
+lxml
+openai
+pandas
+tqdm

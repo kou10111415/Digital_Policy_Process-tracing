@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>itviewer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="itviewer.css">
+</head>
+<body>
+<header>
+  <div>itviewer</div>
+  <div>
+    Layout:
+    <select id="layoutSelect"></select>
+    <div class="dropdown">
+      <button>Functions ▾</button>
+      <div class="dropdown-content">
+        <button id="reloadButton">🔄 Reload</button>
+        <button id="addAnnotationLinks">📌 Annotate</button>
+      </div>
+    </div>
+  </div>
+</header>
+<div id="viewer"></div>
+<script type="module" src="itviewer.js"></script>
+</body>
+</html>
