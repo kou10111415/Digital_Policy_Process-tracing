@@ -61,7 +61,6 @@ Digital_Policy_Process-tracing/
 │   ├── candidates.html
 │   ├── meeting_viewer.html
 │   ├── comparison_viewer.html
-│   ├── *_standalone.html
 │   ├── data/
 │   └── assets/
 ├── requirements.txt
@@ -133,7 +132,7 @@ Digital_Policy_Process-tracing/
 11. `11_build_viewer_data.py`
    - 判定結果をビューア用 JSON にまとめます。
 12. `12_render_static_html.py`
-   - ビューア用 JSON を standalone HTML に埋め込みます。
+   - ビューア用 JSON とアセットから静的 HTML ビューアを生成します。
 
 ## Typical Outputs
 
@@ -145,8 +144,8 @@ Digital_Policy_Process-tracing/
   - 主表 JSON、候補 JSON、判定入力 JSON
 - `docs/data/*.json`
   - ビューアが読む集約済み JSON
-- `docs/*_standalone.html`
-  - `file://` でも開きやすい単体 HTML
+- `docs/*.html`
+  - 静的 HTML ビューア本体
 
 CSV は任意の補助出力として利用できますが、このリポジトリの本流は JSON / JSONL / HTML ベースです。
 
@@ -175,42 +174,6 @@ CSV は任意の補助出力として利用できますが、このリポジト�
 
 この前提に基づき、判定時には会議ごとに比較対象の文書段階を切り替えます。
 
-## Minimal Example
-
-以下は、第113回の要求抽出から standalone HTML 生成までの最小例です。ファイル名や DB 名は利用環境に合わせて調整してください。
-
-```bash
-python scripts/01_extract_meeting_blocks.py \
-  --meeting-id meeting-113 \
-  --mode request \
-  --output data/intermediate/min113_requests_log.jsonl
-
-python scripts/03_parse_llm_blocks.py \
-  --input data/intermediate/min113_requests_log.jsonl \
-  --output-json data/intermediate/min113_requests_master.json
-
-python scripts/02_normalize_initial_draft.py \
-  --input sources/html/initial_draft/env6plan_initial_draft.html \
-  --output data/intermediate/initial_draft_paragraphs.json
-
-python scripts/04_embed_documents.py \
-  --input data/intermediate/initial_draft_paragraphs.json \
-  --input-type json \
-  --stage initial_draft \
-  --output data/intermediate/initial_embeddings.jsonl
-
-python scripts/05_embed_master_blocks.py \
-  --input data/intermediate/min113_requests_master.json \
-  --output data/intermediate/min113_master_embeddings.jsonl
-
-python scripts/06_import_embeddings_to_chromadb.py \
-  --db-path data/intermediate/chroma \
-  --collection min113_requests \
-  --input data/intermediate/min113_master_embeddings.jsonl
-```
-
-以降は、各文書版の段落埋め込み登録、候補取得、判定、ビューア生成へ進みます。
-
 ## Viewer Files
 
 `docs/` には 3 種類のビューアがあります。
@@ -221,8 +184,6 @@ python scripts/06_import_embeddings_to_chromadb.py \
   - 議事録起点で確認するビューア
 - `comparison_viewer.html`
   - 発言と複数版段落を並べて比較するビューア
-
-`*_standalone.html` は、同じデータを HTML に埋め込んだ配布向けファイルです。
 
 ## Notes
 
