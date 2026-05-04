@@ -175,19 +175,6 @@ CSV は任意の補助出力として利用できますが、このリポジト�
 
 この前提に基づき、判定時には会議ごとに比較対象の文書段階を切り替えます。
 
-## Setup
-
-依存関係をインストールします。
-
-```bash
-pip install -r requirements.txt
-```
-
-OpenAI API キーは、次のいずれかで渡します。
-
-1. `OPENAI_API_KEY` 環境変数
-2. 各スクリプトの `--api-key-file`
-
 ## Minimal Example
 
 以下は、第113回の要求抽出から standalone HTML 生成までの最小例です。ファイル名や DB 名は利用環境に合わせて調整してください。
