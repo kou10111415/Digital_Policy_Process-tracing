@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Digital Policy Process-tracing Viewer</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f1e8;
+      --panel: #fffdf8;
+      --text: #1f2937;
+      --muted: #5b6472;
+      --accent: #9a3412;
+      --border: #e5dccd;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+      background:
+        radial-gradient(circle at top right, #f3c892 0, transparent 30%),
+        linear-gradient(180deg, #f8f4eb 0%, var(--bg) 100%);
+      color: var(--text);
+    }
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 48px 20px 64px;
+    }
+    .hero {
+      margin-bottom: 32px;
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.1;
+    }
+    p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .card {
+      display: block;
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--panel);
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 10px 30px rgba(31, 41, 55, 0.06);
+    }
+    .card:hover {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+    .label {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #fff1e8;
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+    .card h2 {
+      margin: 0 0 8px;
+      font-size: 1.1rem;
+    }
+    .note {
+      margin-top: 28px;
+      padding: 16px 18px;
+      border-left: 4px solid var(--accent);
+      background: rgba(255, 253, 248, 0.85);
+      border-radius: 8px;
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.95em;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <h1>Digital Policy Process-tracing Viewer</h1>
+    </section>
+
+    <section class="grid">
+      <a class="card" href="./meeting_viewer_min113.html">
+        <span class="label">Meeting</span>
+        <h2>113回 議事録ビューア</h2>
+        <p>議事録から候補段落への反映を追う画面です。</p>
+      </a>
+      <a class="card" href="./comparison_viewer_min113.html">
+        <span class="label">Comparison</span>
+        <h2>113回 比較ビューア</h2>
+        <p>議事録と候補テキストを横並びで確認します。</p>
+      </a>
+      <a class="card" href="./candidates_min113.html">
+        <span class="label">Candidates</span>
+        <h2>113回 候補一覧</h2>
+        <p>候補段落を一覧で検索できます。</p>
+      </a>
+      <a class="card" href="./meeting_viewer_min115.html">
+        <span class="label">Meeting</span>
+        <h2>115回 議事録ビューア</h2>
+        <p>案から答申案への反映を追う画面です。</p>
+      </a>
+      <a class="card" href="./comparison_viewer_min115.html">
+        <span class="label">Comparison</span>
+        <h2>115回 比較ビューア</h2>
+        <p>議事録と候補テキストを横並びで確認します。</p>
+      </a>
+      <a class="card" href="./candidates_min115.html">
+        <span class="label">Candidates</span>
+        <h2>115回 候補一覧</h2>
+        <p>候補段落を一覧で検索できます。</p>
+      </a>
+    </section>
+  </main>
+</body>
+</html>
