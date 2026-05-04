@@ -1,6 +1,6 @@
 # Digital Policy Process-tracing
 
-審議会議事録の発言から政策文書改訂への反映候補を抽出し、判定結果を静的 HTML ビューアで確認できるようにするためのリポジトリです。対象データは TEI/XML 議事録と、複数版の政策文書 HTML です。
+審議会議事録の発言から政策文書改訂への反映候補を抽出し、判定結果を HTML ビューアで確認できるようにするためのリポジトリです。対象データは TEI/XML 議事録と、複数版の政策文書 HTML です。
 
 このリポジトリでは、発言の中から政策文書の変更要求や変更言及を LLM で抽出し、段落埋め込みによる候補探索と LLM による反映判定を組み合わせて、検証可能な JSON / JSONL / HTML を生成します。
 
@@ -18,7 +18,7 @@
 - ベクトル検索で、発言から関連しそうな段落候補を複数版にまたがって収集する
 - 文書版どうしの対応候補も別途生成する
 - LLM に候補群を比較させ、実際に反映があったかを判定する
-- 判定結果を JSON と静的 HTML ビューアにまとめる
+- 判定結果を JSON と HTML ビューアにまとめる
 
 ## Repository Layout
 
@@ -132,7 +132,7 @@ Digital_Policy_Process-tracing/
 11. `11_build_viewer_data.py`
    - 判定結果をビューア用 JSON にまとめます。
 12. `12_render_static_html.py`
-   - ビューア用 JSON とアセットから静的 HTML ビューアを生成します。
+   - ビューア用 JSON とアセットから HTML ビューアを生成します。
 
 ## Typical Outputs
 
@@ -145,7 +145,7 @@ Digital_Policy_Process-tracing/
 - `docs/data/*.json`
   - ビューアが読む集約済み JSON
 - `docs/*.html`
-  - 静的 HTML ビューア本体
+  - HTML ビューア本体
 
 CSV は任意の補助出力として利用できますが、このリポジトリの本流は JSON / JSONL / HTML ベースです。
 
